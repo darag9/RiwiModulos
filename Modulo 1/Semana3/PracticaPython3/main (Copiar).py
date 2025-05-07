@@ -44,9 +44,10 @@ def remove_products(name:str="")->None:
     else:
         print("Error: The product was not found")
 
-def total_value()->:
+def total_value()->str:
 
-    total = sum(map(lambda t:t.get("price", 0)))
+    total:float = sum(map(lambda t: t.get("price", 0) * t.get("quantity", 0), products))
+    return f"The total price of the products is {total}"
     
 
 #Method main where all the execution of the codes assembles with a cicle while un til the user presses the option 6 to exit the program
@@ -73,7 +74,7 @@ def main():
             remove_products(input("What product would you like to remove?: "))
             print(f"The new state of the products is: \n{products}")
         elif opc == 5:
-            pass
+            print(total_value())
         elif opc == 6:
             print("Thanks for passing by!")
             break

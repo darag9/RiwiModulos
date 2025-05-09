@@ -94,6 +94,23 @@ def remove_books(title:str="")->None:
     else:
         print(f"The book {title} was not found.")
 
+#
+
+def oldest_book(genre:str=""):
+    oldest_list:list = []
+    i:int = 0
+    for book in books_list:
+        if book["genre"].lower() == genre.lower():
+            oldest_list.append(book["publish_year"])
+    oldest_list.sort()
+    oldest_list.reverse()
+    for book in books_list:
+        if book["publish_year"] == oldest_list[i]:
+            print(f"The book {book["title"]} was published in the {oldest_list[i]}")
+    return
+
+            
+
 #Books report method where it prints the total value of the whole inventory in the list
 
 def books_report()->None:
@@ -104,40 +121,47 @@ def books_report()->None:
 
 #Main method where the execution of the previous method happens with a menu
 
-def main():
-    print("Welcome to the Library!")
-    while True:
-        try:    
-            opc = int(input
-    ('''
-    -------------------------------------------------
-                Please select an option:
-                1. add books
-                2. search books
-                3. update books reposition price and copies
-                4. remove books
-                5. show all books report
-                6. exit menu
-    -------------------------------------------------
-    '''))
-            if opc == 1:
-                books_validations(add_books(input("title: "), input("author: "),input("genre: "), int(input("published year: ")), int(input("copies: ")), float(input("reposition price: "))))
-            elif opc == 2:
-                search_books(input("Book's name: "))
-            elif opc == 3:
-                books_validations(update_book_prices(input("Book's name: "), int(input("Update Invetory of copies: ")), float(input("Update reposition price: "))))
-            elif opc == 4:
-                remove_books(input("What book would you like to remove?: "))
-            elif opc == 5:
-                books_report()
-            elif opc == 6:
-                print("See you later!")
-                break
-            else:
-                print("Error: Unknown option")
-        except ValueError:
-            print("Error: The input Value is not supported. Please input a valid value.")
+add_books("a","a","asd",2050,1,23000)
+add_books("b","b","asd",2002,1,23000)
+add_books("c","c","asd",2012,1,23000)
+add_books("d","d","asd",2010,1,23000)
+add_books("e","e","asd",2000,1,23000)
+print(oldest_book("asd"))
+
+# def main():
+#     print("Welcome to the Library!")
+#     while True:
+#         try:    
+#             opc = int(input
+#     ('''
+#     -------------------------------------------------
+#                 Please select an option:
+#                 1. add books
+#                 2. search books
+#                 3. update books reposition price and copies
+#                 4. remove books
+#                 5. show all books report
+#                 6. exit menu
+#     -------------------------------------------------
+#     '''))
+#             if opc == 1:
+#                 books_validations(add_books(input("title: "), input("author: "),input("genre: "), int(input("published year: ")), int(input("copies: ")), float(input("reposition price: "))))
+#             elif opc == 2:
+#                 search_books(input("Book's name: "))
+#             elif opc == 3:
+#                 books_validations(update_book_prices(input("Book's name: "), int(input("Update Invetory of copies: ")), float(input("Update reposition price: "))))
+#             elif opc == 4:
+#                 remove_books(input("What book would you like to remove?: "))
+#             elif opc == 5:
+#                 books_report()
+#             elif opc == 6:
+#                 print("See you later!")
+#                 break
+#             else:
+#                 print("Error: Unknown option")
+#         except ValueError:
+#             print("Error: The input Value is not supported. Please input a valid value.")
 
 
-main()
+# main()
 

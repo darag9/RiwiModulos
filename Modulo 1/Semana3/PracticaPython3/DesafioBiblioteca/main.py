@@ -13,7 +13,7 @@ def add_books(title:str="",author:str="",genre:str="",publish_year:int=0,copies:
             return books_list
         
     books_list.append({"title":title,"author":author,"genre":genre,"publish_year":publish_year,"copies":copies,"repo_price":repo_price})
-    print(f"The book was added!\n")
+    print(f"\nThe book was added!")
     return books_list
 
 #Books Validation where it confirms all the requirements

@@ -42,7 +42,7 @@ def remove_products(name:str="")->None:
             products.remove(product)
             break
     else:
-        print("Error: The product was not found")
+        print("Error: The product was not found.")
 
 def total_value()->str:
 
@@ -55,29 +55,32 @@ def total_value()->str:
 def main():
     print("Welcome to the store! Input an option to select the action required")
     while True:
-        opc = int(input(f'''
-        1. add products
-        2. consult list of products
-        3. update price of a product
-        4. remove products
-        5. consult the total price of the products
-        6. exit
-        '''))
-        
-        if opc == 1:
-            add_products(input("What product would you like to add?: "),float(input("What's the price going to be: ")),int(input("How many products will there be: ")))
-        elif opc == 2:
-            consult_products(input("What product would you like to consult?: "))
-        elif opc == 3:
-            update_price(input("What product would you like to update it's price?: "), float(input("How much will it cost?: ")))
-        elif opc == 4:
-            remove_products(input("What product would you like to remove?: "))
-            print(f"The new state of the products is: \n{products}")
-        elif opc == 5:
-            print(total_value())
-        elif opc == 6:
-            print("Thanks for passing by!")
-            break
-        else:
-            print("\nPlease input an option")
+        try:    
+            opc = int(input(f'''
+            1. add products
+            2. consult list of products
+            3. update price of a product
+            4. remove products
+            5. consult the total price of the products
+            6. exit
+            '''))
+            
+            if opc == 1:
+                add_products(input("What product would you like to add?: "),float(input("What's the price going to be: ")),int(input("How many products will there be: ")))
+            elif opc == 2:
+                consult_products(input("What product would you like to consult?: "))
+            elif opc == 3:
+                update_price(input("What product would you like to update it's price?: "), float(input("How much will it cost?: ")))
+            elif opc == 4:
+                remove_products(input("What product would you like to remove?: "))
+                print(f"The state of the products is: \n{products}")
+            elif opc == 5:
+                print(total_value())
+            elif opc == 6:
+                print("Thanks for passing by!")
+                break
+            else:
+                print("\nPlease input an option")
+        except ValueError:
+            print("Error: The input Value is not supported. Please input a valid value.")
 main()

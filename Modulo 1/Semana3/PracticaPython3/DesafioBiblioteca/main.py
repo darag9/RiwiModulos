@@ -99,7 +99,7 @@ def books_report()->None:
     total_value:float = 0
     for book in books_list:
         total_value = (book["copies"] * book["repo_price"]) + total_value
-    print(f"The invetory value is {total_value}")
+    print(f"The invetory value is {round(total_value, 2)}")
 
 #Main method where the execution of the previous method happens with a menu
 

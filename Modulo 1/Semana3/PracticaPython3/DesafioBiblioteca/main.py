@@ -20,16 +20,17 @@ def add_books(title:str="",author:str="",genre:str="",publish_year:int=0,copies:
 
 def books_validations(books_list:list)->list:
     for book in books_list:
+        #Year Validation
         if book["publish_year"] > 2024 or book["publish_year"] < 1800:
             print(f"Error: Books can't register in the date {book["publish_year"]}")
             books_list.remove(book)
             return books_list
-        
+        #Reposition price validation
         if book["repo_price"] < 0:
             print(f"Error: Book's reposition price must be a positive value.")
             books_list.remove(book)
             return books_list
-        
+        #Copies validation
         if book["copies"] < 0:
             print(f"Error: Book copies must be a positive value.")
             books_list.remove(book)

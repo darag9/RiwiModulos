@@ -1,9 +1,13 @@
 #Desafio biblioteca
 
+#Initialization of the list containing dictionaries
+
 books_list:list = []
 
+#Add books method where it gathers all the book's atributes and appends them all together as a dictionary in a single list position
+
 def add_books(title:str="",author:str="",genre:str="",publish_year:int=0,copies:int=0,repo_price:float=0)->list:
-    for book in books_list:
+    for book in books_list:     #Validation if the list of books is empty
         if book["title"].lower() == title.lower():
             print("Error: This book has already been added.")
             return books_list
@@ -11,6 +15,8 @@ def add_books(title:str="",author:str="",genre:str="",publish_year:int=0,copies:
     books_list.append({"title":title,"author":author,"genre":genre,"publish_year":publish_year,"copies":copies,"repo_price":repo_price})
     print(f"The book was added!\n")
     return books_list
+
+#Books Validation where it confirms all the requirements
 
 def books_validations(books_list:list)->list:
     for book in books_list:
@@ -29,6 +35,7 @@ def books_validations(books_list:list)->list:
             books_list.remove(book)
             return books_list
     
+#Search books method where it finds a book on the list depending on the title
 
 def search_books(title:str="")->None:
     for book in books_list:
@@ -51,6 +58,8 @@ def search_books(title:str="")->None:
         else:
             print(f"option {opc} not recognized. Going back to menu.")
 
+#Update books method where it updates the reposition price and the copies depending on the title
+
 def update_book_prices(title:str="",copies:int=0,repo_price:float=0)->None:
     try:
         if copies > 0:  
@@ -67,6 +76,8 @@ def update_book_prices(title:str="",copies:int=0,repo_price:float=0)->None:
     except:
         print("Error: Theres no books added in the inventory. Please add before updating prices.")
 
+#Remove books method where it removes any book depending on the title
+
 def remove_books(title:str="")->None:
     for book in books_list:
         if book["title"].lower() == title.lower():
@@ -81,11 +92,15 @@ def remove_books(title:str="")->None:
     else:
         print(f"The book {title} was not found.")
 
+#Books report method where it prints the total value of the whole inventory in the list
+
 def books_report()->None:
     total_value:float = 0
     for book in books_list:
         total_value = (book["copies"] * book["repo_price"]) + total_value
     print(f"The invetory value is {total_value}")
+
+#Main method where the execution of the previous method happens with a menu
 
 def main():
     print("Welcome to the Library!")

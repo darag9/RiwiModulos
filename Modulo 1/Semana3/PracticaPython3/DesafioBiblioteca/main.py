@@ -18,8 +18,9 @@ def add_books(title:str="",author:str="",genre:str="",publish_year:int=0,copies:
 
 #Books Validation where it confirms all the requirements
 
-def books_validations(books_list:list)->list:
-    for book in books_list:
+def books_validations(list:list)->list:
+    list = books_list
+    for book in list:
         #Year Validation
         if book["publish_year"] > 2024 or book["publish_year"] < 1800:
             print(f"Error: Books can't register in the date {book["publish_year"]}")
@@ -61,7 +62,7 @@ def search_books(title:str="")->None:
 
 #Update books method where it updates the reposition price and the copies depending on the title
 
-def update_book_prices(title:str="",copies:int=0,repo_price:float=0)->None:
+def update_book_prices(title:str="",copies:int=0,repo_price:float=0)->list:
     try:
         if copies > 0:  
             for book in books_list:
@@ -69,7 +70,7 @@ def update_book_prices(title:str="",copies:int=0,repo_price:float=0)->None:
                     book["copies"] = copies
                     book["repo_price"] = repo_price
                     print(f"the book {book["title"]} was updated with the new reposition price of {book["repo_price"]} and copies of {book["copies"]}")
-                    break
+                    return books_list
             else:
                 print(f"The book {title} was not found")
         else:

@@ -22,7 +22,7 @@ def add_products(name:str="",price:float=0,quantity:int=0)->list:   #main functi
             if product["name"].lower() == name.lower():
                 print("Error: the product you just tried to add was already in the inventory.")
                 return products
-        products.append({"name":name,"price":price,"quantity":quantity})
+        products.append({"name":name,"price":price,"quantity":quantity})    #adds the product to the list "products" as a dictionary
         print("\nProduct added!")
         return products
     else:
@@ -57,7 +57,7 @@ def delete_products(name:str="")->None:     #main functionality 4
     for product in products:
         if product["name"].lower() == name.lower():
             print(f"The product {product["name"]} was found in the inventory. It will be deleted.")
-            products.remove(product)
+            products.remove(product)    #removes the product from the list "products"
             break
     else:
         print(f"\nError: The product {name} was not found in the inventory.")

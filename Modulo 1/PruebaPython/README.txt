@@ -32,4 +32,21 @@ any product in the products list, for it to return a total value, else it will o
 
 3. Input and output examples
 
-- The algorythm is always going to ask for the user to input the values.
+(input) -> process/action
+
+(1) -> add_products()
+('harina') -> name
+(4000) -> price
+(1) -> quantity
+(1) -> add_products()
+('pan') -> name
+(7600) -> price
+(2) -> quantity
+(2) -> consult_products()
+('harina') -> name: harina, price: 4000.0, quantity: 1
+(3) -> update_prices()
+('harina') -> name
+(5000) -> price
+(4) -> delete_products()
+('pan') -> name
+(5) -> total_value() -> 5000.0

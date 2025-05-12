@@ -17,7 +17,7 @@ products:list = []
 #add products
 
 def add_products(name:str="",price:float=0,quantity:int=0)->list:   #main functionality 1
-    if quantity > 0:
+    if quantity > 0 and price > 0:
         for product in products:
             if product["name"].lower() == name.lower():
                 print("Error: the product you just tried to add was already in the inventory.")
@@ -26,7 +26,7 @@ def add_products(name:str="",price:float=0,quantity:int=0)->list:   #main functi
         print("\nProduct added!")
         return products
     else:
-        print("\nError: Product quantities must be positive.")
+        print("\nError: Product values must be positive.")
 
 #consult products
 

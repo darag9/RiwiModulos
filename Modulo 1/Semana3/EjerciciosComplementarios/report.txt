@@ -1,0 +1,19 @@
+AV-321
+Origen: Tokyo
+Destino: Medayork
+Asientos: ['A3', 'A2', 'B1', 'C1']
+Horario: 16:40
+---------------------------------
+AV-101
+Origen: Lima
+Destino: Bogotá
+Asientos: ['A1', 'A2', 'B1', 'B2']
+Horario: 15:30
+---------------------------------
+AV-121
+Origen: Tokyo
+Destino: Medayork
+Asientos: ['A3', 'A2', 'B1', 'C1']
+Horario: 20:40
+---------------------------------
+Invalid schedule.

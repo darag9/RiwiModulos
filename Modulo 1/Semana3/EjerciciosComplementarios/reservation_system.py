@@ -4,8 +4,8 @@ vuelos = {
         
         "AV-321": 
         {
-        "origen": "Tokyo",
-        "destino": "Medayork",
+        "origen": "California",
+        "destino": "Venecia",
         "asientos": ["A1", "A2", "A3", "A4"],
         "horario": (16, 40)
         },
@@ -20,8 +20,8 @@ vuelos = {
     
         "AV-121": 
         {
-        "origen": "Tokyo",
-        "destino": "Medayork",
+        "origen": "Barranquilla",
+        "destino": "Cali",
         "asientos": ["A3", "A2", "B1", "C1"],
         "horario": (20, 40)
         },

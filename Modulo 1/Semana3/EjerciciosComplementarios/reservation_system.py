@@ -69,8 +69,7 @@ def report_generator():
     vuelos_ordenados = sorted(vuelos.items(), key=lambda x: x[1]["horario"])
     for key, detalles in vuelos_ordenados:
         report.write(f"Codigo del vuelo: {key}\nOrigen:{detalles["origen"]}\nDestino:{detalles["destino"]}\nAsientos:{detalles["asientos"]}\nHorario: {detalles["horario"][0]:02d}:{detalles["horario"][1]:02d}\n")
-
-
+    print("Reporte generado con exito.")
 
 def main():
     print("Sistema de reservacion.")
@@ -79,12 +78,24 @@ def main():
             opc = int(input
             ('''
             1. Reservar un asiento
-            2. Mostrar porcentjae de ocupacion
+            2. Mostrar porcentaje de ocupacion
             3. Generar un reporte
+            4. salir
             '''))
             if opc == 1:
-                print(vuelos)
-                reserva_asientos(input("Ingrese el asiento "))
+                for vuelo in vuelos:
+                    print(vuelo, vuelos[vuelo]["asientos"])
+                reserva_asientos(input("Ingrese el vuelo que tomara: ").upper(),input("Ingrese el asiento que va a reservar: ").upper())
+            elif opc == 2:
+                print(porcentaje_ocupacion(input("Ingrese el vuelo del cual quiere consultar su porcentaje: ").upper()))
+            elif opc == 3:
+                report_generator()
+            elif opc == 4:
+                break
+            else:
+                print("Ingresa una opcion valida.")
+        except ValueError:
+            print("Valor no valido.")
 
 
     # reserva_asientos("AV-121","B1")

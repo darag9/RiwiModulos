@@ -1,12 +1,12 @@
 from datetime import time as dt
 
-flights = {
+vuelos = {
         
         "AV-321": 
         {
         "origen": "Tokyo",
         "destino": "Medayork",
-        "asientos": ["A3", "A2", "B1", "C1"],
+        "asientos": ["A1", "A2", "A3", "A4"],
         "horario": (16, 40)
         },
 
@@ -14,7 +14,7 @@ flights = {
         {
         "origen": "Lima",
         "destino": "Bogotá",
-        "asientos": ["A1", "A2", "B1", "B2"],
+        "asientos": ["B1", "B2", "B3", "B2"],
         "horario": (15, 30)
         },
     
@@ -35,48 +35,64 @@ flights = {
         }
 }
 
-def seat_reservation(flight_code:str="",seat:str="")->None:
-    for flight in flights:
-        if flight == flight_code:
-            for seats in flights[flight]["asientos"]:
-                if seat == seats:
-                    print("reservado.")
-                    reserved_flights.append(seat)
-                    break
+
+def reserva_asientos(codigo_vuelo:str="",asiento:str=""):
+    for codigo in vuelos:
+        if codigo == codigo_vuelo:
+            for lugar in vuelos[codigo]["asientos"]:
+                if asiento == lugar:
+                    print("asiento reservado correctamente.")
+                    vuelos[codigo]["asientos"].remove(lugar)
+                    print(vuelos[codigo]["asientos"])
+                    return 
             else:
-                print("El asiento ya fue reservado.")
-            break
+                print("El asiento ya fue reservado previamente.")
+                return True
     else:
-        print("El codigo del vuelo no fue encontrado.")
+        print("El codigo de vuelo no ha sido encontrado. ")
+        return True
 
-reserved_flights:list = []
 
-def percentage_occupation(flight_code:str="")->float:
-    totalSeats:int = 0
-    percentage:float = 0
-    for seats in flights[flight_code]["asientos"]:
-        totalSeats += 1
-    percentage = len(reserved_flights) / totalSeats
-    return percentage * 100
+    
+def porcentaje_ocupacion(codigo_vuelo:str="")->float:
+    temp:int = 0
+    porcentaje:float = 0
+    for codigo in vuelos:
+        if codigo == codigo_vuelo:
+            for i in vuelos[codigo]["asientos"]:
+                temp += 1
+    porcentaje = (temp / len(vuelos[codigo]["asientos"])) * 100
+    return porcentaje
 
 def report_generator():
     report = open("report.txt", "w")
-    ordered_list:list = []
+    vuelos_ordenados = sorted(vuelos.items(), key=lambda x: x[1]["horario"])
+    for key, detalles in vuelos_ordenados:
+        report.write(f"Codigo del vuelo: {key}\nOrigen:{detalles["origen"]}\nDestino:{detalles["destino"]}\nAsientos:{detalles["asientos"]}\nHorario: {detalles["horario"][0]:02d}:{detalles["horario"][1]:02d}\n")
 
-
-    #flights report
-    for flight in flights:
-        if flights[flight]["horario"][0] <= 23 and flights[flight]["horario"][1] <= 59:
-            report.write(f"{flight}\nOrigen: {flights[flight]["origen"]}\nDestino: {flights[flight]["destino"]}\nAsientos: {flights[flight]["asientos"]}\nHorario: {flights[flight]["horario"][0]}:{flights[flight]["horario"][1]}\n")
-            report.write("---------------------------------\n")
-        else:
-            report.write("Invalid schedule.")
-    report.close()
 
 
 def main():
-    seat_reservation("AV-121","A3")
-    seat_reservation("AV-121","A2")
-    print(percentage_occupation("AV-121"))
-    print(percentage_occupation("AV-101"))
+    print("Sistema de reservacion.")
+    while True:
+        try:
+            opc = int(input
+            ('''
+            1. Reservar un asiento
+            2. Mostrar porcentjae de ocupacion
+            3. Generar un reporte
+            '''))
+            if opc == 1:
+                print(vuelos)
+                reserva_asientos(input("Ingrese el asiento "))
+
+
+    # reserva_asientos("AV-121","B1")
+    # reserva_asientos("AV-121","C1")
+    # reserva_asientos("AV-321","A1")
+    # reserva_asientos("AV-121","B1")
+    # print(porcentaje_ocupacion("AV-121"))
+    # print(porcentaje_ocupacion("AV-321"))
+    # report_generator()
+    
 main()

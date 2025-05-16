@@ -1,19 +1,20 @@
-AV-321
-Origen: Tokyo
-Destino: Medayork
-Asientos: ['A3', 'A2', 'B1', 'C1']
-Horario: 16:40
----------------------------------
-AV-101
-Origen: Lima
-Destino: Bogotá
-Asientos: ['A1', 'A2', 'B1', 'B2']
+Codigo del vuelo: AV-101
+Origen:Lima
+Destino:Bogotá
+Asientos:['B1', 'B2', 'B3', 'B2']
 Horario: 15:30
----------------------------------
-AV-121
-Origen: Tokyo
-Destino: Medayork
-Asientos: ['A3', 'A2', 'B1', 'C1']
+Codigo del vuelo: AV-321
+Origen:Tokyo
+Destino:Medayork
+Asientos:['A2', 'A3', 'A4']
+Horario: 16:40
+Codigo del vuelo: AV-121
+Origen:Tokyo
+Destino:Medayork
+Asientos:['A3', 'A2']
 Horario: 20:40
----------------------------------
-Invalid schedule.
+Codigo del vuelo: AV-123
+Origen:Tokyo
+Destino:Medayork
+Asientos:['A3', 'A2', 'B1', 'C1']
+Horario: 24:40

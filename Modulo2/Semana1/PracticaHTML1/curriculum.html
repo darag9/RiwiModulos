@@ -7,46 +7,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="mainpage">
-    <!-- Cabecera de la pagina -->
+    <!-- Page header -->
     <header>
-        <div style="display: flex; flex-direction: column;">
-            <h1 style="color: rgb(24, 104, 104)">Curriculum Vitae</h1>
-            <h2 style="color: rgb(255, 255, 255)">Daniel Ramirez Agudelo</h2>
+        <div>
+            <h1 style="color: rgb(24, 104, 104)">Portfolio</h1>
+            <h2 style="color: rgb(255, 255, 255)">Daniel Ramirez Agudelo</h2><br>
         </div>
+        <nav>
+            <a href="#Description" class="header-text">Description</a>
+            <a href="#Skills" class="header-text">Skills</a>
+            <a href="#Studies" class="header-text">Studies</a>
+            <a href="#Experience" class="header-text">Experience</a>
+            <a href="#Projects" class="header-text">Projects</a>
+        </nav>
     </header>
-    <!-- Cuerpo principal -->
+    <!-- Main Body -->
     <main class="general-text">
         <!-- Lista de elementos -->
         <ul>
+            <!-- Description -->
+            <h3  class="paint-titles" class="desc">Description</h3><br>
             <section>
-                <h3  class="paint-titles">Description</h3>
                 <li>Hey, I'm <span>Daniel!</span> Nice to meet you and thank you for being interested on my curriculum. I am a very passionated person interested in expanding my coding knowledge and skills. I'm always up for a challenge and looking to meet new people in the process. If you're also like me don't hesitate to contact me! See you in our next projects.</li>
             </section>
-            <section>
-                <h3 class="paint-titles">Skills</h3>
-                <li>My main skill is based in the programs logic, Back-end wise, I like to code in python, Java and sometimes C++. But when it comes to Front-end I'm a beginner, doing my first steps with HTML and CSS.</li>
-            </section>
             <br>
-            <!-- div de las imagenes -->
+            <!-- Skills -->
+            <section id="#Skills">
+                <h3 class="paint-titles" >Skills</h3><br>
+                <li>My main skill is based in the programs logic, Back-end wise, I like to code in python, Java and sometimes C++. But when it comes to Front-end I'm a beginner, doing my first steps with HTML and CSS.</li>
+            </section><br>
+            <br>
+            <!-- Images div -->
             <div class="box" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
                 <img src="./images/5848152fcef1014c0b5e4967.png" alt="Python" class="image">
-                <img src="./images/62a86f0d14a38cce0c371c12.png" alt="Java" style="width: 210px;">
+                <img src="./images/62a86f0d14a38cce0c371c12.png" alt="Java" class="image" style="width: 230px;">
                 <img src="./images/1949039720980cbe083b7f8ef0a632fb.png" alt="c++" class="image">
                 <img src="./images/github.png" alt="github" class="image">
                 <img src="./images/5847f5bdcef1014c0b5e489c.png" alt="html5" class="image">
-                <img src="./images/62b221ef038aad4d3ed7ca2e.png" alt="css" style="width: 110px; height: 150px;">
+                <img src="./images/62b221ef038aad4d3ed7ca2e.png" alt="css" class="image" style="width: 110px; height: 150px;">
             </div>
+            <!-- Studies -->
+            <br>
+            <h3  class="paint-titles" id="#Studies">Studies</h3><br>
             <section>
-                <h3  class="paint-titles">Studies</h3>
                 <li class="importante">Graduated as a bachelor, currently studying Software development at ITM.</li>
                 <li class="importante">Couple courses of python, Java and C++.</li>
-            </section>
+            </section><br>
+            <!-- Experience -->
+            <h3  class="paint-titles">Experience</h3><br>
             <section>
-                <h3  class="paint-titles">Experience</h3>
-                <li>zero null none ninguna no aplica</li>
+                <li>zero null none ninguna no aplica</li><br>
             </section>
-            <h3 class="paint-titles">Projects</h3>
-            <section class="projects"> 
+            <!-- Project table -->
+            <section class="projects" id="#Projects">
+                <h3 class="paint-titles" style="text-align: center;">Projects</h3>
                 <table>
                     <tr>
                         <th>Project Name</th>
@@ -63,17 +77,32 @@
                         <td><img src="./images/5848152fcef1014c0b5e4967.png" style="width: 50px;" alt="python"></td>
                         <td><a href="https://github.com/darag9/RiwiModulos/blob/main/Modulo%201/Semana3/PracticaPython3/main%20(Copiar).py" style="color: white;">Shop Items Management System</a></td>
                     </tr>
+                     <tr>
+                        <td>Portfolio</td>
+                        <td><img src="./images/5847f5bdcef1014c0b5e489c.png" style="width: 50px;" alt="html5"></td>
+                        <td><a href="https://github.com/darag9/RiwiModulos/blob/main/Modulo2/Semana1/PracticaHTML1/curriculum.html" style="color: white;">Portfolio</a></td>
+                    </tr>
                 </table>
+            </section>
+            <!-- Contact form -->
+            <h3 class="paint-titles">Contact</h3>
+            <section>
+                
             </section>
         </ul>
     </main>
-    <!-- Pie de pagina -->
-    <footer class="general">
-        <ul>
-            <h3 class="paint-titles">Contact</h3>
-            <li>+57 3332835153</li>
-            <li>Github: <a href="https://github.com/darag9" title="Github personal" target="_blank">https://github.com/darag9</a></li>
-        </ul>
+    <!-- Page Footer -->
+    <footer class="general-text">
+        <form action="">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Write your name" class="input-text">
+            
+            <label for="email">Email</label>
+            <input type="email" placeholder="Write your email" class="input-text">
+
+            <label for="Message">Message</label>
+            <input type="text" placeholder="Write your message" class="input-text">
+        </form>
     </footer>
 </body>
 </html>

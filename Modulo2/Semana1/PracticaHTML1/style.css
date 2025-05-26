@@ -24,7 +24,7 @@ header {
     border-bottom: 3px solid rgba(255, 255, 255, 0.397);
 }
 header nav{
-    margin-top: 3.5rem;
+    margin-top: 2rem;
 }
 .header-text {
     color: white;
@@ -163,6 +163,14 @@ footer {
     text-align: center;
 }
 
+.icon {
+    justify-content: baseline;
+    animation: hover;
+}
+
+@keyframes hover {
+
+}
 
 li {
     list-style: none;
@@ -173,3 +181,8 @@ section {
     margin: auto;
 }
 
+main {
+    margin-top: 5px;
+    height: 80vh;
+    overflow: scroll;
+}

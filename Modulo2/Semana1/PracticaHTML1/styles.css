@@ -2,6 +2,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 span {
     color:aqua
 }
@@ -131,7 +136,7 @@ table {
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: center;
     justify-content: center;
     align-items: center;
     text-align: start

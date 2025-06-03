@@ -1,0 +1,55 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.items{
+    border: 1px solid rgba(0, 0, 0, 0);
+    height: 200px;
+    border-radius: 7px;
+
+}
+
+.first{
+    background-color: rgb(255, 78, 55);
+    grid-column: 1/3;
+}
+
+.second{
+    background-color: rgb(255, 78, 55);
+}
+
+.third{
+    background-color: rgb(255, 188, 4);
+    grid-column: 40%;
+    grid-row: 2/4;
+    height: 425px;
+}
+
+.fourth{
+    background-color: purple;
+    grid-column: 2/4;
+
+}
+
+.fifth{
+    background-color: purple;
+    grid-column: 2/4;
+}
+
+.sixth{
+    background-color: rgb(1, 92, 177);
+
+}
+
+.seventh{
+    background-color: rgb(1, 92, 177);
+
+}
+
+.eighth{
+    background-color: rgb(1, 92, 177);
+
+}

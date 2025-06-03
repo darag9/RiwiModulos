@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: Poppins, sans-serif;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.upper {
+    background: url('images/view-spectacular-nature-landscape\ 1.png') center/cover no-repeat;
+}
+
+.contact {
+    background: url('images/view-spectacular-nature-landscape\ 1\ (1).png') center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 90px;
+}
+
+.left-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 3;
+}
+
+.left-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    writing-mode: vertical-lr;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.nav-down, .nav-up {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-down {
+    bottom: 20px;
+}
+
+.nav-up {
+    top: 20px;
+    z-index: 4;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 500px;
+    font-size: 1.1rem;
+}

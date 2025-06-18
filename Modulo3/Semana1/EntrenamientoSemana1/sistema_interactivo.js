@@ -1,51 +1,33 @@
-// console.log("Bienvenido al Sistema interactivo de mensajes!");
-
-// let arreglo = [];
-// arreglo.push(1);
-// arreglo.push(2);
-// arreglo.push(3);
-// arreglo.push(4);
-// console.log(arreglo);
-
-// arreglo.pop();
-
-// for (i of arreglo) {
-//     console.log(i);
-// }
-
-// let nombre = prompt("Ingresa tu nombre!");
-// let edad = prompt("Ingresa tu edad!");
-// edad = parseInt(edad);
-
-// if (isNaN(edad)) {
-//     console.error("La edad no es reconocible por el programa");
-// } else if (edad >= 18) {
-//     alert(`Felicidades ${nombre}! eres mayor de edad con ${edad} años!`);
-// } else if (edad < 18) {
-//     alert(`Animo ${nombre}, en unos años ya seras mayor de edad!`);
-// }
-
-let sum = 0;
-let prom = 0;
-let cont = 0
+let enviar = document.getElementById("enviar");
+let mostrar = document.getElementById("mostrar");
 let notas = [];
-let numNotas = 0
+let sumaNotas = 0;
 
-numNotas = prompt("Ingrese cuantas notas va a registrar");
-numNotas = parseInt(numNotas)
+enviar.addEventListener("click", (i) => {
 
-for (let i=0;i<numNotas;i++) {
-    let numero = prompt("Ingrese una nota");
-    numero = parseFloat(numero)
-    notas.push(numero)
-}
+    let nota = parseFloat(document.getElementById("notas").value)
+    notas.push(nota);
+    sumaNotas += nota;
 
-for (let nota of notas) {
-    sum += nota
-    cont += 1
-}
+    console.log(nota);
+    console.log(notas);
+    
+});
 
-prom = sum / cont
-prom = parseFloat(prom)
+mostrar.addEventListener("click", (e) => {
 
-console.log(prom)
+    let promedio = sumaNotas / notas.length
+    console.log(notas);
+    console.log(promedio);
+
+    let span = document.getElementById("prom");
+    span.innerHTML = promedio
+
+    let estado = document.getElementById("estado");
+    
+    if (promedio >= 3) {
+        estado.innerHTML = "Aprobaste!"
+    } else {
+        estado.innerHTML = "Reprobaste :c"
+    }
+});

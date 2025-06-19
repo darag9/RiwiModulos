@@ -6,8 +6,16 @@ let sumaNotas = 0;
 enviar.addEventListener("click", (i) => {
 
     let nota = parseFloat(document.getElementById("notas").value)
-    notas.push(nota);
-    sumaNotas += nota;
+
+    if (isNaN(nota)) {
+        estado.innerHTML = "Debes ingresar una nota valida"
+    } else if (nota < 0) {
+        estado.innerHTML = "La nota debe ser un numero positivo"
+    } else {
+        notas.push(nota);
+        sumaNotas += nota;
+        estado.innerHTML = "Nota Ingresada!"
+    }
 
     console.log(nota);
     console.log(notas);

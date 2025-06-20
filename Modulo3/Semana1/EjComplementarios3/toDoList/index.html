@@ -7,13 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Lista de Tareas</h3>
-    <div>Ingrese una tarea</div>
-    <input type="text" id="tarea">
-    <input type="submit" value="añadir tarea" id="enviar">
-    <div>Tareas Pendientes</div>
-    <div class="addContainer">
-        <div id="mostrar"></div>
+    <div class="page-title">
+        <h3>Tasks List</h3>
+    </div>
+    <div class="text-title">
+        Add a task
+    </div>
+    <div>
+        <input type="text" id="task" value="">
+        <input type="submit" value="add task" id="send" onclick="addTask()">
+    </div>
+    <div>
+        Pending tasks:
+    </div>
+    <div>
+        <ul id="showTask"></ul>
     </div>
     <script src="app.js"></script>
 </body>

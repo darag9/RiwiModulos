@@ -1,29 +1,40 @@
-let enviar = document.getElementById("enviar")
+let taskList = [];
+let send = document.getElementById('send');
+let showTask = document.getElementById('showTask');
 
-let lista_tareas = [];
-let tareas_html = [];
+function addTask() {
+    let task = document.getElementById('task').value;
+    if (task != '') {
 
-enviar.addEventListener("click", (e) => {
+        let taskInfo = document.createElement('li');
+        showTask.appendChild(taskInfo);
+        taskList.push(task);
+        taskInfo.innerHTML = task;
 
-    let tarea = document.getElementById("tarea").value;
-    let mostrar = document.getElementById("mostrar");
-    
+        let doneButton = document.createElement('button');
+        doneButton.textContent = 'Done';
+        taskInfo.appendChild(doneButton);
 
-    lista_tareas.push(tarea);
-    tareas_html.push(tarea);
+        let textDone = document.createElement('p');
 
-    mostrar.style.display="flex";
-    mostrar.style.flexDirection="column";
+        doneButton.addEventListener("click", (e) => {
+            textDone.innerHTML = 'Done!';
+            taskInfo.appendChild(textDone);
+        });
 
-    console.log(lista_tareas);
+        let deleteButton = document.createElement('button');
+        deleteButton.textContent = 'delete';
+        taskInfo.appendChild(deleteButton);
 
-    for (let i=0; i<tareas_html.length;i++) {
-        mostrar.innerHTML += tareas_html[i];
+        deleteButton.addEventListener("click", (e) => {
+            showTask.removeChild(taskInfo);
+            taskList.pop(task);
+        });
+
         
-        tareas_html.pop()
+    } else {
+        alert('input required');
     }
-});
-
-
-
+    console.log(taskList);
+}
 

@@ -13,12 +13,12 @@
     <div class="text-title">
         Add a task
     </div>
-    <div>
-        <input type="text" id="task" value="">
-        <input type="submit" value="add task" id="send" onclick="addTask()">
-    </div>
-    <div>
-        Pending tasks:
+    <form>
+        <input type="text" required>
+        <button type="submit">add Task</button>
+    </form>
+    <div class="tasks">
+        <h3>Pending tasks</h3>
     </div>
     <div>
         <ul id="showTask"></ul>
